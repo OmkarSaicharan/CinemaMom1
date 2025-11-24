@@ -601,70 +601,406 @@
         // Telugu Movie Data with direct YouTube links (300+ movies)
         const teluguMoviesData = [
             {
-    id: 1,
-    title: "Pathala Bhairavi",
-    language: "telugu",
-    year: 1951,
-    imdb: 8.3,
-    videoId: "wT17gpzSdNs"
-},
-{
-    id: 2,
-    title: "Devadasu (ANR, Savitri)",
-    language: "telugu",
-    year: 1953,
-    imdb: 8.1,
-    videoId: "RyRS95RIR7g"
-},
-{
-    id: 3,
-    title: "Palletoori Pilla",
-    language: "telugu",
-    year: 1954,
-    imdb: 7.8,
-    videoId: "uppbKc7puTw"
-},
-{
-    id: 4,
-    title: "Donga Ramudu (ANR)",
-    language: "telugu",
-    year: 1955,
-    imdb: 7.4,
-    videoId: "2NpdTnRAA_U"
-},
-{
-    id: 5,
-    title: "Mayabazar (NTR, ANR)",
-    language: "telugu",
-    year: 1957,
-    imdb: 9.1,
-    videoId: "ZqYtCbIDWfQ"
-},
-{
-    id: 6,
-    title: "Dongallo Dora",
-    language: "telugu",
-    year: 1957,
-    imdb: 7.0,
-    videoId: "xuDOWfvHB0M"
-},
-{
-    id: 7,
-    title: "Suvarna Sundari",
-    language: "telugu",
-    year: 1958,
-    imdb: 7.2,
-    videoId: "N2BW3i9lCKQ"
-},
-{
-    id: 8,
-    title: "Sri Venkateswara Mahatyam",
-    language: "telugu",
-    year: 1959,
-    imdb: 7.9,
-    videoId: "B9GgqC7i4rE"
-},
-
+                id: 1,
+                title: "Gundamma Katha – NTR, ANR, Savitri",
+                language: "telugu",
+                year: 1962,
+                imdb: 8.5,
+                videoId: "7996TZ9lCeI"
+            },
+            {
+                id: 2,
+                title: "Palletoori Pilla – ANR, NTR, Anjali Devi",
+                language: "telugu",
+                year: 1954,
+                imdb: 7.8,
+                videoId: "uppbKc7puTw"
+            },
+            {
+                id: 3,
+                title: "Gunasundari Katha – Sriranjani, Kasturi Siva Rao",
+                language: "telugu",
+                year: 1949,
+                imdb: 7.2,
+                videoId: "2euC7gqzLTw"
+            },
+            {
+                id: 4,
+                title: "Drohi – Jaggayya, Vanisree",
+                language: "telugu",
+                year: 1970,
+                imdb: 7.0,
+                videoId: "MJRhl30ahKQ"
+            },
+            {
+                id: 5,
+                title: "Nenu Meeku Baga Kaavalsinavaadini – Kiran Abbavaram",
+                language: "telugu",
+                year: 2022,
+                imdb: 6.5,
+                videoId: "A91ED_aZXvs"
+            },
+            {
+                id: 6,
+                title: "Sarangadhariya – Latest Super Hit",
+                language: "telugu",
+                year: 2023,
+                imdb: 7.9,
+                videoId: "UKnYw_6QOJw"
+            },
+            {
+                id: 7,
+                title: "Touch Chesi Chudu – Ravi Teja",
+                language: "telugu",
+                year: 2018,
+                imdb: 6.2,
+                videoId: "IUf7wbZUbAw"
+            },
+            {
+                id: 8,
+                title: "Ye Endaka Godugu – Latest",
+                language: "telugu",
+                year: 2023,
+                imdb: 7.1,
+                videoId: "3y3pRuLon_E"
+            },
+            {
+                id: 9,
+                title: "30 Rojullo Preminchadam Ela – Amritha Aiyer",
+                language: "telugu",
+                year: 2023,
+                imdb: 6.8,
+                videoId: "uDpRzwT1MZo"
+            },
+            {
+                id: 10,
+                title: "UTSAVAM – Dilip Prakash, Regina Cassandra",
+                language: "telugu",
+                year: 2021,
+                imdb: 6.4,
+                videoId: "as0XMR9vyhg"
+            },
+            {
+                id: 11,
+                title: "Sashi – Aadi Sai Kumar, Surbhi",
+                language: "telugu",
+                year: 2023,
+                imdb: 6.7,
+                videoId: "oe92hYSaLAM"
+            },
+            {
+                id: 12,
+                title: "Karna – NTR, Savitri, Sivaji Ganesan",
+                language: "telugu",
+                year: 1963,
+                imdb: 8.1,
+                videoId: "t0Q_1xKBEkA"
+            },
+            {
+                id: 13,
+                title: "Civil Engineer – Puneeth Rajkumar, Rachita Ram",
+                language: "telugu",
+                year: 2016,
+                imdb: 6.9,
+                videoId: "DlPCf9LvOQw"
+            },
+            {
+                id: 14,
+                title: "Magadheera – Ram Charan, Kajal Aggarwal",
+                language: "telugu",
+                year: 2009,
+                imdb: 7.8,
+                videoId: "1DIrsAOkx1c"
+            },
+            {
+                id: 15,
+                title: "RRR – NTR, Ram Charan",
+                language: "telugu",
+                year: 2022,
+                imdb: 8.0,
+                videoId: "f_vbAtFSEc0"
+            },
+            {
+                id: 16,
+                title: "Baahubali: The Beginning – Prabhas",
+                language: "telugu",
+                year: 2015,
+                imdb: 8.2,
+                videoId: "sOEg_YZQsTI"
+            },
+            {
+                id: 17,
+                title: "Pushpa: The Rise – Allu Arjun",
+                language: "telugu",
+                year: 2021,
+                imdb: 7.6,
+                videoId: "Q1NKMPhP8PY"
+            },
+            {
+                id: 18,
+                title: "KGF: Chapter 1 – Yash",
+                language: "telugu",
+                year: 2018,
+                imdb: 8.2,
+                videoId: "JKa05nyUmuQ"
+            },
+            {
+                id: 19,
+                title: "Ala Vaikunthapurramuloo – Allu Arjun",
+                language: "telugu",
+                year: 2020,
+                imdb: 7.4,
+                videoId: "H11ZMi8Je8g"
+            },
+            {
+                id: 20,
+                title: "Maharshi – Mahesh Babu",
+                language: "telugu",
+                year: 2019,
+                imdb: 7.2,
+                videoId: "VQzkRU56vew"
+            },
+            {
+                id: 21,
+                title: "Sarileru Neekevvaru – Mahesh Babu",
+                language: "telugu",
+                year: 2020,
+                imdb: 6.8,
+                videoId: "7aij4VDJ8g4"
+            },
+            {
+                id: 22,
+                title: "Arjun Reddy – Vijay Deverakonda",
+                language: "telugu",
+                year: 2017,
+                imdb: 8.0,
+                videoId: "b2mV7uwCBVg"
+            },
+            {
+                id: 23,
+                title: "Geetha Govindam – Vijay Deverakonda",
+                language: "telugu",
+                year: 2018,
+                imdb: 7.5,
+                videoId: "MYDiPXEvj1Q"
+            },
+            {
+                id: 24,
+                title: "Jersey – Nani",
+                language: "telugu",
+                year: 2019,
+                imdb: 8.5,
+                videoId: "3RRUPKKUtT0"
+            },
+            {
+                id: 25,
+                title: "Fidaa – Vijay Deverakonda",
+                language: "telugu",
+                year: 2017,
+                imdb: 7.8,
+                videoId: "0-EeVq8PQQ0"
+            },
+            {
+                id: 26,
+                title: "Bommarillu – Siddharth",
+                language: "telugu",
+                year: 2006,
+                imdb: 8.2,
+                videoId: "u07Qv2gfOsg"
+            },
+            {
+                id: 27,
+                title: "Athadu – Mahesh Babu",
+                language: "telugu",
+                year: 2005,
+                imdb: 8.3,
+                videoId: "pv1rKvLI2jw"
+            },
+            {
+                id: 28,
+                title: "Okkadu – Mahesh Babu",
+                language: "telugu",
+                year: 2003,
+                imdb: 8.4,
+                videoId: "b50Np7_cH0U"
+            },
+            {
+                id: 29,
+                title: "Happy Days – Telugu College Life",
+                language: "telugu",
+                year: 2007,
+                imdb: 8.1,
+                videoId: "f-EfSA7iyNU"
+            },
+            {
+                id: 30,
+                title: "Vedam – Allu Arjun",
+                language: "telugu",
+                year: 2010,
+                imdb: 8.3,
+                videoId: "wdEo88RzFkU"
+            },
+            {
+                id: 31,
+                title: "3 – Dhanush, Shruti Haasan",
+                language: "telugu",
+                year: 2012,
+                imdb: 7.5,
+                videoId: "NQ8RteRUTJU"
+            },
+            {
+                id: 32,
+                title: "Mehbooba – Akash Puri, Neha Shetty",
+                language: "telugu",
+                year: 2022,
+                imdb: 6.3,
+                videoId: "5kpOEi8jb00"
+            },
+            {
+                id: 33,
+                title: "Hai – Aryan Rajesh, Nikita",
+                language: "telugu",
+                year: 2010,
+                imdb: 6.1,
+                videoId: "DaTHeG8gM1I"
+            },
+            {
+                id: 34,
+                title: "Aalasyam Amrutam – Nikhil Siddharth",
+                language: "telugu",
+                year: 2014,
+                imdb: 6.4,
+                videoId: "bkoaWPuB17Y"
+            },
+            {
+                id: 35,
+                title: "Goonda Mogudu – Sarath Kumar, Sukanya",
+                language: "telugu",
+                year: 1995,
+                imdb: 6.8,
+                videoId: "UeGUSiH4_5w"
+            },
+            {
+                id: 36,
+                title: "Raja Cheyyi Vesthe",
+                language: "telugu",
+                year: 2018,
+                imdb: 6.2,
+                videoId: "dUp9k8NHnao"
+            },
+            {
+                id: 37,
+                title: "Gamyam",
+                language: "telugu",
+                year: 2008,
+                imdb: 8.3,
+                videoId: "mfYLGwZiNVw"
+            },
+            {
+                id: 38,
+                title: "Premalo Pavani Kalyan",
+                language: "telugu",
+                year: 2018,
+                imdb: 6.5,
+                videoId: "J1KXkZoeL98"
+            },
+            {
+                id: 39,
+                title: "Rakhi",
+                language: "telugu",
+                year: 2006,
+                imdb: 7.2,
+                videoId: "Z3DBg4MtDIQ"
+            },
+            {
+                id: 40,
+                title: "Neninthe",
+                language: "telugu",
+                year: 2008,
+                imdb: 7.8,
+                videoId: "J1iLuEj7AEs"
+            },
+            {
+                id: 41,
+                title: "Lakshmi's NTR",
+                language: "telugu",
+                year: 2019,
+                imdb: 6.9,
+                videoId: "9gyZmgbFVoY"
+            },
+            {
+                id: 42,
+                title: "Oohalu Gusagusalade",
+                language: "telugu",
+                year: 2014,
+                imdb: 7.7,
+                videoId: "dqY4FYwM4RQ"
+            },
+            {
+                id: 43,
+                title: "Kshanam",
+                language: "telugu",
+                year: 2016,
+                imdb: 8.3,
+                videoId: "4M9DEgUqYeY"
+            },
+            {
+                id: 44,
+                title: "Malliswari",
+                language: "telugu",
+                year: 2004,
+                imdb: 7.5,
+                videoId: "O7H7Bjow3o8"
+            },
+            {
+                id: 45,
+                title: "Sarrainodu",
+                language: "telugu",
+                year: 2016,
+                imdb: 7.1,
+                videoId: "5KC-tW5rEO8"
+            },
+            {
+                id: 46,
+                title: "Eega",
+                language: "telugu",
+                year: 2012,
+                imdb: 7.9,
+                videoId: "n1kz55qwOH4"
+            },
+            {
+                id: 47,
+                title: "Srimanthudu",
+                language: "telugu",
+                year: 2015,
+                imdb: 7.5,
+                videoId: "S-CiMlknIzM"
+            },
+            {
+                id: 48,
+                title: "Bahubali Part 1",
+                language: "telugu",
+                year: 2015,
+                imdb: 8.2,
+                videoId: "VdafjyP5Lc8"
+            },
+            {
+                id: 49,
+                title: "Bahubali Part 2",
+                language: "telugu",
+                year: 2017,
+                imdb: 8.3,
+                videoId: "2qYD47lNdQ8"
+            },
+            {
+                id: 50,
+                title: "Orey Bujjiga",
+                language: "telugu",
+                year: 2020,
+                imdb: 6.4,
+                videoId: "MoR1UrbWQ4I"
+            },
+            
             // Note: In a real implementation, all 300+ movies would be included here
             // For brevity, I'm showing 50 movies but the pattern continues for all 300+
         ];
@@ -900,5 +1236,4 @@
         document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
-
 </html>
