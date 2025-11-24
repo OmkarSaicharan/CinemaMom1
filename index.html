@@ -108,9 +108,18 @@
             cursor: pointer;
         }
 
+        .mobile-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--old-gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x1080/1a472a/ffffff?text=CinemaMom');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1489599809505-fb40eb6c6cd4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             padding: 100px 0;
@@ -241,6 +250,7 @@
             font-weight: 600;
             font-size: 1.1rem;
             border: 1px solid var(--old-gold);
+            text-decoration: none;
         }
 
         .play-btn:hover {
@@ -310,63 +320,6 @@
             font-size: 0.9rem;
         }
 
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: var(--darker-bg);
-            width: 90%;
-            max-width: 900px;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-            border: 2px solid var(--old-gold);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            z-index: 10;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
         /* Search Results Highlight */
         .movie-card.highlighted {
             border: 2px solid var(--old-gold);
@@ -374,16 +327,31 @@
         }
 
         /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .movie-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .header-content {
-                flex-direction: column;
-                gap: 20px;
+                flex-wrap: wrap;
+                gap: 15px;
             }
             
             .nav-menu {
                 order: 3;
                 width: 100%;
                 justify-content: center;
+                flex-wrap: wrap;
             }
             
             .search-bar {
@@ -392,7 +360,8 @@
             }
             
             .movie-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 20px;
             }
             
             .movie-title {
@@ -406,6 +375,105 @@
             .hero p {
                 font-size: 1rem;
             }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .lang-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                width: 100%;
+                display: none;
+                margin-top: 15px;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu a {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .mobile-toggle {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 20px;
+            }
+            
+            .search-bar {
+                width: 100%;
+                margin-top: 15px;
+            }
+            
+            .hero {
+                padding: 70px 0;
+            }
+            
+            .movie-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .movie-card {
+                padding: 15px;
+            }
+            
+            .movie-title {
+                font-size: 1.1rem;
+                min-height: 60px;
+            }
+            
+            .play-btn {
+                padding: 10px 15px;
+                font-size: 1rem;
+            }
+            
+            .language-filter {
+                gap: 10px;
+            }
+            
+            .lang-btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .nav-menu a {
+                padding: 6px 10px;
+                font-size: 0.9rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
@@ -418,7 +486,10 @@
                     <i class="fas fa-film"></i>
                     <span>CinemaMom</span>
                 </div>
-                <div class="nav-menu">
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="nav-menu" id="navMenu">
                     <a href="#">Home</a>
                     <a href="#">Movies</a>
                     <a href="#">New Releases</a>
@@ -437,7 +508,7 @@
     <section class="hero">
         <div class="container">
             <h1>Welcome to CinemaMom</h1>
-            <p>Your premium destination for authentic Telugu cinema. Watch the latest trailers and classic movies with direct official links.</p>
+            <p>Your premium destination for authentic Telugu cinema. Watch classic movies with direct official links.</p>
         </div>
     </section>
 
@@ -445,41 +516,13 @@
     <main class="container">
         <!-- Language Filter -->
         <div class="language-filter">
-            <button class="lang-btn active" data-lang="all">
-                <i class="fas fa-globe"></i> All Languages
-            </button>
-            <button class="lang-btn" data-lang="telugu">
-                <i class="fas fa-play-circle"></i> Telugu
-            </button>
-            <button class="lang-btn" data-lang="hindi">
-                <i class="fas fa-play-circle"></i> Hindi
-            </button>
-            <button class="lang-btn" data-lang="english">
-                <i class="fas fa-play-circle"></i> English
-            </button>
-            <button class="lang-btn" data-lang="tamil">
-                <i class="fas fa-play-circle"></i> Tamil
-            </button>
-            <button class="lang-btn" data-lang="malayalam">
-                <i class="fas fa-play-circle"></i> Malayalam
-            </button>
-            <button class="lang-btn" data-lang="marathi">
-                <i class="fas fa-play-circle"></i> Marathi
+            <button class="lang-btn active" data-lang="telugu">
+                <i class="fas fa-play-circle"></i> Telugu Movies
             </button>
         </div>
 
-        <!-- Homepage Trailers Section -->
-        <section class="movies-section" id="trailersSection">
-            <h2 class="section-title">
-                <i class="fas fa-play-circle"></i> Latest Telugu Trailers & Teasers
-            </h2>
-            <div class="movie-grid" id="trailersGrid">
-                <!-- Trailers will be dynamically generated here -->
-            </div>
-        </section>
-
-        <!-- Telugu Movies Section (Hidden by default) -->
-        <section class="movies-section" id="teluguMoviesSection" style="display: none;">
+        <!-- Telugu Movies Section -->
+        <section class="movies-section" id="teluguMoviesSection">
             <h2 class="section-title">
                 <i class="fas fa-video"></i> Premium Telugu Cinema Collection
             </h2>
@@ -517,10 +560,6 @@
                     <h3>Languages</h3>
                     <ul class="footer-links">
                         <li><a href="#">Telugu Movies</a></li>
-                        <li><a href="#">Hindi Movies</a></li>
-                        <li><a href="#">English Movies</a></li>
-                        <li><a href="#">Tamil Movies</a></li>
-                        <li><a href="#">Malayalam Movies</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -539,66 +578,8 @@
         </div>
     </footer>
 
-    <!-- Video Modal -->
-    <div class="modal" id="videoModal">
-        <div class="modal-content">
-            <button class="close-modal" id="closeModal">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="video-container" id="videoContainer">
-                <!-- YouTube iframe will be inserted here -->
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Trailers Data for Homepage
-        const trailersData = [
-            {
-                id: 1,
-                title: "Pushpa 2: The Rule - Official Teaser",
-                type: "teaser",
-                year: 2024,
-                videoId: "jNiWk7WYb_c"
-            },
-            {
-                id: 2,
-                title: "Kalki 2898 AD - Official Trailer",
-                type: "trailer", 
-                year: 2024,
-                videoId: "j8ixA7kX0Ns"
-            },
-            {
-                id: 3,
-                title: "Devara: Part 1 - Teaser",
-                type: "teaser",
-                year: 2024,
-                videoId: "Y3rPHH8xKqg"
-            },
-            {
-                id: 4,
-                title: "Game Changer - First Look",
-                type: "teaser",
-                year: 2024,
-                videoId: "Q0lB0I1L7pE"
-            },
-            {
-                id: 5,
-                title: "Kubera - Official Teaser",
-                type: "teaser",
-                year: 2024,
-                videoId: "e1k7-Jt5GJQ"
-            },
-            {
-                id: 6,
-                title: "Guntur Kaaram - Trailer",
-                type: "trailer",
-                year: 2024,
-                videoId: "zU9JxQ9eTlY"
-            }
-        ];
-
-        // Telugu Movie Data with direct YouTube links (300+ movies)
+        // Telugu Movie Data with direct YouTube links
         const teluguMoviesData = [
             {
                 id: 1,
@@ -759,179 +740,20 @@
                 year: 2019,
                 imdb: 7.2,
                 videoId: "VQzkRU56vew"
-            },
-            {
-                id: 21,
-                title: "Sarileru Neekevvaru – Mahesh Babu",
-                language: "telugu",
-                year: 2020,
-                imdb: 6.8,
-                videoId: "7aij4VDJ8g4"
-            },
-            {
-                id: 22,
-                title: "Arjun Reddy – Vijay Deverakonda",
-                language: "telugu",
-                year: 2017,
-                imdb: 8.0,
-                videoId: "b2mV7uwCBVg"
-            },
-            {
-                id: 23,
-                title: "Geetha Govindam – Vijay Deverakonda",
-                language: "telugu",
-                year: 2018,
-                imdb: 7.5,
-                videoId: "MYDiPXEvj1Q"
-            },
-            {
-                id: 24,
-                title: "Jersey – Nani",
-                language: "telugu",
-                year: 2019,
-                imdb: 8.5,
-                videoId: "3RRUPKKUtT0"
-            },
-            {
-                id: 25,
-                title: "Fidaa – Vijay Deverakonda",
-                language: "telugu",
-                year: 2017,
-                imdb: 7.8,
-                videoId: "0-EeVq8PQQ0"
-            },
-            {
-                id: 26,
-                title: "Bommarillu – Siddharth",
-                language: "telugu",
-                year: 2006,
-                imdb: 8.2,
-                videoId: "u07Qv2gfOsg"
-            },
-            {
-                id: 27,
-                title: "Athadu – Mahesh Babu",
-                language: "telugu",
-                year: 2005,
-                imdb: 8.3,
-                videoId: "pv1rKvLI2jw"
-            },
-            {
-                id: 28,
-                title: "Okkadu – Mahesh Babu",
-                language: "telugu",
-                year: 2003,
-                imdb: 8.4,
-                videoId: "b50Np7_cH0U"
-            },
-            {
-                id: 29,
-                title: "Happy Days – Telugu College Life",
-                language: "telugu",
-                year: 2007,
-                imdb: 8.1,
-                videoId: "f-EfSA7iyNU"
-            },
-            {
-                id: 30,
-                title: "Vedam – Allu Arjun",
-                language: "telugu",
-                year: 2010,
-                imdb: 8.3,
-                videoId: "wdEo88RzFkU"
-            },
-            {
-                id: 31,
-                title: "3 – Dhanush, Shruti Haasan",
-                language: "telugu",
-                year: 2012,
-                imdb: 7.5,
-                videoId: "NQ8RteRUTJU"
-            },
-            {
-                id: 32,
-                title: "Mehbooba – Akash Puri, Neha Shetty",
-                language: "telugu",
-                year: 2022,
-                imdb: 6.3,
-                videoId: "5kpOEi8jb00"
-            },
-            {
-                id: 33,
-                title: "Hai – Aryan Rajesh, Nikita",
-                language: "telugu",
-                year: 2010,
-                imdb: 6.1,
-                videoId: "DaTHeG8gM1I"
-            },
-            {
-                id: 34,
-                title: "Aalasyam Amrutam – Nikhil Siddharth",
-                language: "telugu",
-                year: 2014,
-                imdb: 6.4,
-                videoId: "bkoaWPuB17Y"
-            },
-            {
-                id: 35,
-                title: "Goonda Mogudu – Sarath Kumar, Sukanya",
-                language: "telugu",
-                year: 1995,
-                imdb: 6.8,
-                videoId: "UeGUSiH4_5w"
-            },
-            // Note: In a real implementation, all 300+ movies would be included here
-            // For brevity, I'm showing 50 movies but the pattern continues for all 300+
+            }
         ];
 
         // DOM Elements
-        const trailersGrid = document.getElementById('trailersGrid');
         const movieGrid = document.getElementById('movieGrid');
-        const trailersSection = document.getElementById('trailersSection');
-        const teluguMoviesSection = document.getElementById('teluguMoviesSection');
-        const langButtons = document.querySelectorAll('.lang-btn');
-        const videoModal = document.getElementById('videoModal');
-        const videoContainer = document.getElementById('videoContainer');
-        const closeModal = document.getElementById('closeModal');
         const searchInput = document.getElementById('searchInput');
         const searchBtn = document.getElementById('searchBtn');
-
-        // Current filter state
-        let currentFilter = 'all';
-        let currentMovies = [...trailersData];
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
 
         // Initialize the app
         function init() {
-            renderTrailers(trailersData);
             renderMovies(teluguMoviesData);
             setupEventListeners();
-        }
-
-        // Render trailers to the grid
-        function renderTrailers(trailers) {
-            trailersGrid.innerHTML = '';
-            
-            if (trailers.length === 0) {
-                trailersGrid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-muted)">No trailers found matching your criteria.</p>';
-                return;
-            }
-            
-            trailers.forEach(trailer => {
-                const trailerCard = document.createElement('div');
-                trailerCard.className = 'movie-card';
-                trailerCard.setAttribute('data-title', trailer.title.toLowerCase());
-                trailerCard.innerHTML = `
-                    <h3 class="movie-title">${trailer.title}</h3>
-                    <div class="movie-meta">
-                        <span>${trailer.year}</span>
-                        <span class="imdb-rating">${trailer.type.toUpperCase()}</span>
-                    </div>
-                    <button class="play-btn" data-id="${trailer.id}" data-type="trailer">
-                        <i class="fas fa-play"></i> Watch ${trailer.type}
-                    </button>
-                `;
-                trailersGrid.appendChild(trailerCard);
-            });
         }
 
         // Render movies to the grid
@@ -953,34 +775,12 @@
                         <span>${movie.year}</span>
                         <span class="imdb-rating"><i class="fas fa-star"></i> ${movie.imdb}/10</span>
                     </div>
-                    <button class="play-btn" data-id="${movie.id}" data-type="movie">
+                    <a href="https://www.youtube.com/watch?v=${movie.videoId}" target="_blank" class="play-btn">
                         <i class="fas fa-play"></i> Play Movie
-                    </button>
+                    </a>
                 `;
                 movieGrid.appendChild(movieCard);
             });
-        }
-
-        // Filter content by language
-        function filterContent(language) {
-            if (language === 'all') {
-                // Show trailers, hide movies
-                trailersSection.style.display = 'block';
-                teluguMoviesSection.style.display = 'none';
-                currentMovies = [...trailersData];
-                renderTrailers(currentMovies);
-            } else if (language === 'telugu') {
-                // Show movies, hide trailers
-                trailersSection.style.display = 'none';
-                teluguMoviesSection.style.display = 'block';
-                currentMovies = [...teluguMoviesData];
-                renderMovies(currentMovies);
-            } else {
-                // For other languages, show message
-                trailersSection.style.display = 'block';
-                teluguMoviesSection.style.display = 'none';
-                trailersGrid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-muted)">Content for this language coming soon!</p>';
-            }
         }
 
         // Search content
@@ -991,84 +791,32 @@
             });
             
             if (!query.trim()) {
-                filterContent(currentFilter);
+                renderMovies(teluguMoviesData);
                 return;
             }
             
-            if (currentFilter === 'all') {
-                // Search in trailers
-                const filteredTrailers = trailersData.filter(trailer => 
-                    trailer.title.toLowerCase().includes(query.toLowerCase())
-                );
-                
-                renderTrailers(filteredTrailers);
-                
-                // Highlight the search results
-                if (filteredTrailers.length > 0) {
-                    document.querySelectorAll('.movie-card').forEach(card => {
-                        if (card.getAttribute('data-title').includes(query.toLowerCase())) {
-                            card.classList.add('highlighted');
-                            
-                            // Scroll to the first highlighted movie
-                            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        }
-                    });
-                }
-            } else if (currentFilter === 'telugu') {
-                // Search in movies
-                const filteredMovies = teluguMoviesData.filter(movie => 
-                    movie.title.toLowerCase().includes(query.toLowerCase())
-                );
-                
-                renderMovies(filteredMovies);
-                
-                // Highlight the search results
-                if (filteredMovies.length > 0) {
-                    document.querySelectorAll('.movie-card').forEach(card => {
-                        if (card.getAttribute('data-title').includes(query.toLowerCase())) {
-                            card.classList.add('highlighted');
-                            
-                            // Scroll to the first highlighted movie
-                            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        }
-                    });
-                }
+            // Search in movies
+            const filteredMovies = teluguMoviesData.filter(movie => 
+                movie.title.toLowerCase().includes(query.toLowerCase())
+            );
+            
+            renderMovies(filteredMovies);
+            
+            // Highlight the search results
+            if (filteredMovies.length > 0) {
+                document.querySelectorAll('.movie-card').forEach(card => {
+                    if (card.getAttribute('data-title').includes(query.toLowerCase())) {
+                        card.classList.add('highlighted');
+                        
+                        // Scroll to the first highlighted movie
+                        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                });
             }
-        }
-
-        // Play video
-        function playVideo(videoId, type) {
-            videoContainer.innerHTML = `
-                <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
-                        allow="autoplay; encrypted-media" allowfullscreen>
-                </iframe>
-            `;
-            videoModal.style.display = 'flex';
-        }
-
-        // Close modal
-        function closeVideoModal() {
-            videoModal.style.display = 'none';
-            videoContainer.innerHTML = '';
         }
 
         // Set up event listeners
         function setupEventListeners() {
-            // Language filter buttons
-            langButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const language = button.getAttribute('data-lang');
-                    
-                    // Update active button
-                    langButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    
-                    // Filter content
-                    currentFilter = language;
-                    filterContent(language);
-                });
-            });
-            
             // Search functionality
             searchBtn.addEventListener('click', () => {
                 searchContent(searchInput.value);
@@ -1080,34 +828,12 @@
                 }
             });
             
-            // Play buttons
-            document.addEventListener('click', (e) => {
-                if (e.target.classList.contains('play-btn') || e.target.parentElement.classList.contains('play-btn')) {
-                    const button = e.target.classList.contains('play-btn') ? e.target : e.target.parentElement;
-                    const id = button.getAttribute('data-id');
-                    const type = button.getAttribute('data-type');
-                    
-                    let videoId;
-                    if (type === 'trailer') {
-                        const trailer = trailersData.find(t => t.id === parseInt(id));
-                        videoId = trailer ? trailer.videoId : null;
-                    } else {
-                        const movie = teluguMoviesData.find(m => m.id === parseInt(id));
-                        videoId = movie ? movie.videoId : null;
-                    }
-                    
-                    if (videoId) {
-                        playVideo(videoId, type);
-                    }
-                }
-            });
-            
-            // Close modal
-            closeModal.addEventListener('click', closeVideoModal);
-            videoModal.addEventListener('click', (e) => {
-                if (e.target === videoModal) {
-                    closeVideoModal();
-                }
+            // Mobile menu toggle
+            mobileToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                mobileToggle.innerHTML = navMenu.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
             });
         }
 
